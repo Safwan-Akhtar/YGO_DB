@@ -37,4 +37,9 @@ public class CardController {
         return this.service.findCardById(id);
     }
 
+    @PutMapping("/updateCard/{id}")
+    public Card_DB updateCard(@PathVariable Long id, @RequestBody Card_DB card){
+        return this.service.updateCard(id, card);
+    }
+
 }
