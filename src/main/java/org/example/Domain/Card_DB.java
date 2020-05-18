@@ -9,11 +9,20 @@ public class Card_DB {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long cardId;
+
     private String cardName;
     private String cardType;
 
     @ManyToOne(targetEntity = Deck.class)
     private Deck deck;
+
+    public Card_DB() {
+    }
+
+    public Card_DB(String cardName, String cardType) {
+        this.cardName = cardName;
+        this.cardType = cardType;
+    }
 
     public Long getCardId() {
         return cardId;
