@@ -1,9 +1,7 @@
 package org.example.CardController;
 
 
-import org.example.Domain.Card_DB;
 import org.example.Domain.Deck;
-import org.example.service.CardService;
 import org.example.service.DeckService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -16,7 +14,7 @@ public class DeckController {
     private final DeckService service;
 
     @Autowired
-    public DeckController(CardService service){
+    public DeckController(DeckService service){
         this.service = service;
     }
 
