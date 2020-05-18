@@ -1,6 +1,6 @@
 package org.example.CardController;
 
-import org.example.CardDB.Card_DB;
+import org.example.Domain.Card_DB;
 import org.example.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;

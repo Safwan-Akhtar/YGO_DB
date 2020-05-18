@@ -1,6 +1,6 @@
 package org.example.service;
 
-import org.example.CardDB.Card_DB;
+import org.example.Domain.Card_DB;
 import org.example.exceptions.CardNotFoundException;
 import org.example.repo.CardRepo;
 import org.springframework.beans.factory.annotation.Autowired;

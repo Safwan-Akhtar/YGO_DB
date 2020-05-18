@@ -1,4 +1,4 @@
-package org.example.CardDB;
+package org.example.Domain;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
