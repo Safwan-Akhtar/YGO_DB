@@ -1,8 +1,6 @@
 package org.example.service;
 
-import org.example.Domain.Card_DB;
 import org.example.Domain.Deck;
-import org.example.exceptions.CardNotFoundException;
 import org.example.exceptions.DeckNotFoundException;
 import org.example.repo.DeckRepo;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,12 +9,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class DeckServices {
+public class DeckService {
 
     private final DeckRepo repo;
 
     @Autowired
-    public DeckServices(DeckRepo repo) {
+    public DeckService(DeckRepo repo) {
         this.repo = repo;
     }
 
