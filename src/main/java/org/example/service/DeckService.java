@@ -1,39 +1,51 @@
 package org.example.service;
 
 import org.example.Domain.Deck;
+import org.example.dto.DeckDTO;
 import org.example.exceptions.DeckNotFoundException;
 import org.example.repo.DeckRepo;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class DeckService {
 
     private final DeckRepo repo;
 
+    private final ModelMapper mapper;
+
+
     @Autowired
-    public DeckService(DeckRepo repo) {
+    public DeckService(DeckRepo repo, ModelMapper mapper) {
         this.repo = repo;
+        this.mapper = mapper;
     }
 
-    public List<Deck> readDeck(){
-        return repo.findAll();
+    private DeckDTO mapToDTO(Deck deck){
+        return this.mapper.map(deck, DeckDTO.class);
     }
 
-    public Deck createDeck(Deck deck){
-        return this.repo.save(deck);
+    public List<DeckDTO> readDeck(){
+        return repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-    public Deck findDeckById(Long id){
-        return this.repo.findById(id).orElseThrow(DeckNotFoundException::new);
+    public DeckDTO createDeck(Deck deck){
+        return this.mapToDTO(this.repo.save(deck));
     }
 
-    public Deck updateDeck(Long id, Deck deck){
-        Deck update = findDeckById(id);
+    public DeckDTO findDeckById(Long id){
+        return this.mapToDTO(this.repo.findById(id).orElseThrow(DeckNotFoundException::new));
+    }
+
+    public DeckDTO updateDeck(Long id, Deck deck){
+        Deck update = this.repo.findById(id).orElseThrow(DeckNotFoundException::new);
         update.setDeckName(deck.getDeckName());
-        return this.repo.save(update);
+        Deck tempDeck = this.repo.save(update);
+        return this.mapToDTO(tempDeck);
     }
 
     public boolean deleteDeck(Long id){
