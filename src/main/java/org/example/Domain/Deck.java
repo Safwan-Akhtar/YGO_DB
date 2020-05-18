@@ -1,9 +1,8 @@
 package org.example.Domain;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 @Entity
@@ -13,8 +12,9 @@ public class Deck {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long deckId;
     private String deckName;
-//    private Long cardId;
 
+    @OneToMany(mappedBy = "deck", fetch = FetchType.LAZY)
+    private List<Card_DB> cards = new ArrayList<>();
 
     public Long getDeckId() {
         return deckId;
@@ -32,17 +32,12 @@ public class Deck {
         this.deckName = deckName;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (o == null || getClass() != o.getClass()) return false;
-        Deck deck = (Deck) o;
-        return deckId.equals(deck.deckId) &&
-                deckName.equals(deck.deckName);
+    public List<Card_DB> getCards() {
+        return cards;
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(deckId, deckName);
+    public void setCards(List<Card_DB> cards) {
+        this.cards = cards;
     }
+
 }
