@@ -3,10 +3,7 @@ package org.example.CardController;
 import org.example.CardDB.Card_DB;
 import org.example.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -29,4 +26,15 @@ public class CardController {
     public Card_DB createCard(@RequestBody Card_DB card){
         return this.service.createCard(card);
     }
+
+    @DeleteMapping("/deleteCard/{id}")
+    public boolean deleteCard(@PathVariable Long id){
+        return this.service.deleteCard(id);
+    }
+
+    @GetMapping("/getCardById/{id}")
+    public Card_DB getCardById(@PathVariable Long id){
+        return this.service.findCardById(id);
+    }
+
 }
