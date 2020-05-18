@@ -1,6 +1,5 @@
 package org.example.dto;
 
-import org.example.Domain.Card_DB;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,7 +8,7 @@ public class DeckDTO {
 
     private Long deckId;
     private String deckName;
-    private List<Card_DB> cards = new ArrayList<>();
+    private List<CardDTO> cards = new ArrayList<>();
 
     public DeckDTO() {
     }
@@ -18,7 +17,7 @@ public class DeckDTO {
         this.deckName = deckName;
     }
 
-    public DeckDTO(String deckName, List<Card_DB> cards) {
+    public DeckDTO(String deckName, List<CardDTO> cards) {
         this.deckName = deckName;
         this.cards = cards;
     }
@@ -39,11 +38,11 @@ public class DeckDTO {
         this.deckName = deckName;
     }
 
-    public List<Card_DB> getCards() {
+    public List<CardDTO> getCards() {
         return cards;
     }
 
-    public void setCards(List<Card_DB> cards) {
+    public void setCards(List<CardDTO> cards) {
         this.cards = cards;
     }
 }

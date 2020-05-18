@@ -1,8 +1,11 @@
 package org.example.Controller;
 
 import org.example.Domain.Card_DB;
+import org.example.dto.CardDTO;
 import org.example.service.CardService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -18,28 +21,30 @@ public class CardController {
     }
 
     @GetMapping("/getAllCards")
-    public List<Card_DB> getAllCards(){
-        return this.service.readCards();
+    public ResponseEntity<List<CardDTO>> getAllCards(){
+        return ResponseEntity.ok(this.service.readCards());
     }
 
     @PostMapping("/createCard")
-    public Card_DB createCard(@RequestBody Card_DB card){
-        return this.service.createCard(card);
+    public ResponseEntity<CardDTO> createCard(@RequestBody Card_DB card){
+        return new ResponseEntity<CardDTO>(this.service.createCard(card), HttpStatus.CREATED);
     }
 
     @DeleteMapping("/deleteCard/{id}")
-    public boolean deleteCard(@PathVariable Long id){
-        return this.service.deleteCard(id);
+    public ResponseEntity<?> deleteCard(@PathVariable Long id){
+        return this.service.deleteCard(id)
+                ? ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).build()
+                : ResponseEntity.noContent().build();
     }
 
     @GetMapping("/getCardById/{id}")
-    public Card_DB getCardById(@PathVariable Long id){
-        return this.service.findCardById(id);
+    public ResponseEntity<CardDTO> getCardById(@PathVariable Long id){
+        return ResponseEntity.ok(this.service.findCardById(id));
     }
 
     @PutMapping("/updateCard/{id}")
-    public Card_DB updateCard(@PathVariable Long id, @RequestBody Card_DB card){
-        return this.service.updateCard(id, card);
+    public ResponseEntity<CardDTO> updateCard(@PathVariable Long id, @RequestBody Card_DB card){
+        return ResponseEntity.ok(this.service.updateCard(id, card));
     }
 
 }

@@ -1,5 +1,6 @@
 package org.example.dto;
 
+
 public class CardDTO {
 
     private Long cardId;
@@ -37,4 +38,6 @@ public class CardDTO {
     public void setCardType(String cardType) {
         this.cardType = cardType;
     }
+
+
 }
