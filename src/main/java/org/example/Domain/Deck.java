@@ -11,7 +11,15 @@ public class Deck {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long deckId;
+
     private String deckName;
+
+    public Deck() {
+    }
+
+    public Deck(String deckName) {
+        this.deckName = deckName;
+    }
 
     @OneToMany(mappedBy = "deck", fetch = FetchType.LAZY)
     private List<Card_DB> cards = new ArrayList<>();

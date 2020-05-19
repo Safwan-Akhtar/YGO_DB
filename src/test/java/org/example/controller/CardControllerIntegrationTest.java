@@ -1,4 +1,4 @@
-package org.example.rest;
+package org.example.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Domain.Card_DB;

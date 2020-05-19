@@ -1,4 +1,4 @@
-package org.example.rest;
+package org.example.controller;
 
 import org.example.Controller.CardController;
 import org.example.Domain.Card_DB;
