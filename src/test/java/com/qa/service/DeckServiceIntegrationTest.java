@@ -1,4 +1,4 @@
-package com.qa.FailedTest;
+package com.qa.service;
 
 import com.qa.Domain.Deck;
 import com.qa.dto.DeckDTO;

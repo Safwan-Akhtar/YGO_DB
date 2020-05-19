@@ -1,4 +1,4 @@
 .idea
 target
 *.iml
-src/test/java/org/example/FailedTest
+src/test/java/com/qa/FailedTest
