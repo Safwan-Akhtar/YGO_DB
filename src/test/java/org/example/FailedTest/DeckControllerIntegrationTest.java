@@ -1,4 +1,4 @@
-package org.example.controller;
+package org.example.FailedTest;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Domain.Deck;

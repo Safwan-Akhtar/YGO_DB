@@ -2,7 +2,6 @@ package org.example.controller;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.example.Domain.Card_DB;
-import org.example.Domain.Card_DB_Test;
 import org.example.dto.CardDTO;
 import org.example.repo.CardRepo;
 import org.junit.Before;

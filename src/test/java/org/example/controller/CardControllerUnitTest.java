@@ -2,7 +2,6 @@ package org.example.controller;
 
 import org.example.Controller.CardController;
 import org.example.Domain.Card_DB;
-import org.example.Domain.Card_DB_Test;
 import org.example.dto.CardDTO;
 import org.example.service.CardService;
 import org.junit.Before;

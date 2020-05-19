@@ -1,9 +1,9 @@
-package org.example.service;
+package org.example.FailedTest;
 
 import org.example.Domain.Card_DB;
-import org.example.Domain.Card_DB_Test;
 import org.example.dto.CardDTO;
 import org.example.repo.CardRepo;
+import org.example.service.CardService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

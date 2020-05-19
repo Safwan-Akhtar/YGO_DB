@@ -1,8 +1,9 @@
-package org.example.service;
+package org.example.FailedTest;
 
 import org.example.Domain.Deck;
 import org.example.dto.DeckDTO;
 import org.example.repo.DeckRepo;
+import org.example.service.DeckService;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;

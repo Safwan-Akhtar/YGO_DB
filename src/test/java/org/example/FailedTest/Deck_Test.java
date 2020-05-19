@@ -1,5 +1,6 @@
-package org.example.Domain;
+package org.example.FailedTest;
 
+import org.example.Domain.Deck;
 import org.junit.Before;
 import org.junit.Test;
 
