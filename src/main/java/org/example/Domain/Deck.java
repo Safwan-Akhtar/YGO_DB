@@ -48,4 +48,18 @@ public class Deck {
         this.cards = cards;
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Deck deck = (Deck) o;
+        return deckId.equals(deck.deckId) &&
+                deckName.equals(deck.deckName) &&
+                cards.equals(deck.cards);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(deckId, deckName, cards);
+    }
 }
