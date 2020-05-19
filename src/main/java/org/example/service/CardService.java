@@ -1,40 +1,52 @@
 package org.example.service;
 
-import org.example.CardDB.Card_DB;
+import org.example.Domain.Card_DB;
+import org.example.dto.CardDTO;
 import org.example.exceptions.CardNotFoundException;
 import org.example.repo.CardRepo;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class CardService {
 
     private final CardRepo repo;
 
+    private final ModelMapper mapper;
+
     @Autowired
-    public CardService(CardRepo repo) {
+    public CardService(CardRepo repo, ModelMapper mapper) {
         this.repo = repo;
+        this.mapper = mapper;
     }
 
-    public List<Card_DB> readCards(){
-        return repo.findAll();
+    private CardDTO mapToDTO(Card_DB card){
+        return this.mapper.map(card, CardDTO.class);
     }
 
-    public Card_DB createCard(Card_DB card){
-        return this.repo.save(card);
+    public List<CardDTO> readCards(){
+        return repo.findAll().stream().map(this::mapToDTO).collect(Collectors.toList());
     }
 
-    public Card_DB findCardById(Long id){
-        return this.repo.findById(id).orElseThrow(CardNotFoundException::new);
+    public CardDTO createCard(Card_DB card){
+        Card_DB tempCard = this.repo.save(card);
+        return mapToDTO(tempCard);
     }
 
-    public Card_DB updateCard(Long id, Card_DB card){
-        Card_DB update = findCardById(id);
+    public CardDTO findCardById(Long id){
+        return this.mapToDTO(this.repo.findById(id).orElseThrow(CardNotFoundException::new));
+    }
+
+    public CardDTO updateCard(Long id, Card_DB card){
+        Card_DB update = this.repo.findById(id).orElseThrow(CardNotFoundException::new);
         update.setCardName(card.getCardName());
         update.setCardType(card.getCardType());
-        return this.repo.save(update);
+        Card_DB tempCard = this.repo.save(card);
+        return this.mapToDTO(tempCard);
     }
 
     public boolean deleteCard(Long id){
