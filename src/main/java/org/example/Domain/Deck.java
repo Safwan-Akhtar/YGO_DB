@@ -21,7 +21,7 @@ public class Deck {
         this.deckName = deckName;
     }
 
-    @OneToMany(mappedBy = "deck", fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "deck", fetch = FetchType.EAGER)
     private List<Card_DB> cards = new ArrayList<>();
 
     public Long getDeckId() {
