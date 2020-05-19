@@ -86,7 +86,7 @@ public class CardControllerUnitTest {
     }
 
     @Test
-    public void getNoteByIDTest(){
+    public void getCardByIDTest(){
         when(this.service.findCardById(cardId)).thenReturn(this.cardDTO);
         assertEquals(this.cardController.getCardById(cardId), new ResponseEntity<CardDTO>(this.cardDTO, HttpStatus.OK));
         verify(service, times(1)).findCardById(cardId);
