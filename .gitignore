@@ -1,4 +1,8 @@
 .idea
 target
 *.iml
-src/test/java/org/example/FailedTest
+src/test/java/org/example/FailedTest/Card_DB_Test.java
+src/test/java/org/example/FailedTest/CardServiceIntegrationTest.java
+src/test/java/org/example/FailedTest/Deck_Test.java
+src/test/java/org/example/FailedTest/DeckControllerIntegrationTest.java
+src/test/java/org/example/FailedTest/DeckServiceIntegrationTest.java
