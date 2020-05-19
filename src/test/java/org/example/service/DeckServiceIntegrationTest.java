@@ -1,10 +1,7 @@
 package org.example.service;
 
-import org.example.Domain.Card_DB;
 import org.example.Domain.Deck;
-import org.example.dto.CardDTO;
 import org.example.dto.DeckDTO;
-import org.example.repo.CardRepo;
 import org.example.repo.DeckRepo;
 import org.junit.Before;
 import org.junit.Test;
@@ -68,12 +65,12 @@ public class DeckServiceIntegrationTest {
 
 
 //    @Test
-//    public void updateNoteTest(){
-//        Note newNote = new Note("Favourite movies", "The grinch");
-//        Note updateNote = new Note(newNote.getTitle(), newNote.getDescription());
-//        updateNote.setId(this.testNoteWithID.getId());
-//        assertThat(this.service.updateNote(this.testNoteWithID.getId() ,newNote))
-//                .isEqualTo(this.mapToDTO(updateNote));
+//    public void updateDeckTest(){
+//        Deck newDeck = new Deck("Favourite deck");
+//        Deck updateDeck = new Deck(newDeck.getDeckName());
+//        updateDeck.setDeckId(this.testDeckWithID.getDeckId());
+//        assertThat(this.service.updateDeck(this.testDeckWithID.getDeckId() ,newDeck))
+//                .isEqualTo(this.mapToDTO(updateDeck));
 //    }
 
     @Test
