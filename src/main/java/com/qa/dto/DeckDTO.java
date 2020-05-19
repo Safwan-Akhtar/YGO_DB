@@ -3,6 +3,7 @@ package com.qa.dto;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 public class DeckDTO {
 
@@ -44,5 +45,20 @@ public class DeckDTO {
 
     public void setCards(List<CardDTO> cards) {
         this.cards = cards;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        DeckDTO deckDTO = (DeckDTO) o;
+        return deckId.equals(deckDTO.deckId) &&
+                deckName.equals(deckDTO.deckName) &&
+                cards.equals(deckDTO.cards);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(deckId, deckName, cards);
     }
 }
