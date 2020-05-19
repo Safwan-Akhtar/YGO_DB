@@ -90,7 +90,7 @@
         <configuration>
           <archive>
             <manifest>
-              <mainClass>org.example.App</mainClass>
+              <mainClass>com.qa.App</mainClass>
             </manifest>
           </archive>
         </configuration>
@@ -109,7 +109,7 @@
               <archive>
                 <manifest>
                   <mainClass>
-                    org.example.App
+                    com.qa.App
                   </mainClass>
                 </manifest>
               </archive>
