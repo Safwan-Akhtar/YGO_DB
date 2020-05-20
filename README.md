@@ -38,18 +38,18 @@ This is the same for adding cards to your database.
 
 ## Build Tools
 
-Maven - Dependency Management
-Jenkins - CI Pipeline Tool
-IntelliJ - IDE
-Java - Code Base
-Github - Project Planning Kanban Board
-JUnit - Testing Tool
-Mockito - Testing Tool
-GCP/H2 - Cloud Host
-SonarQube - Static Analysis Tool
-Nexus - Artefact Repository
-Git - Version Control System
-Selenium - Automation Testing tool
+- Maven - Dependency Management
+- Jenkins - CI Pipeline Tool
+- IntelliJ - IDE
+- Java - Code Base
+- Github - Project Planning Kanban Board
+- JUnit - Testing Tool
+- Mockito - Testing Tool
+- GCP/H2 - Cloud Host
+- SonarQube - Static Analysis Tool
+- Nexus - Artefact Repository
+- Git - Version Control System
+- Selenium - Automation Testing tool
 
 ### Coverage
 J-Unit/ mockito: 92%
@@ -57,3 +57,11 @@ J-Unit/ mockito: 92%
 ## Authors
 
 * **Safwan Akhtar** - [Safwan-QA](https://github.com/Safwan-Akhtar) - 
+
+## Acknowledgements
+
+- [Nicholas Johnsonh](https://github.com/nickrstewarttds) - Main Trainer.
+- [Tadas Vaidotas](https://github.com/tvaidotas) - Trainer for selenium and testing.
+- [Savannah](https://github.com/savannahvaith) - Trainers for HTML, CSS, Javascripts (frontend development).
+- [felix](https://github.com/Femarleycode) - provided support for code and connecting databases.
+- [Christian](https://github.com/Christian-QA) - provided support for code and connecting databases.
