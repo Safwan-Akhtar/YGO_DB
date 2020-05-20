@@ -1,4 +1,7 @@
 # YGO_DB
+
+[Project presentation](https://docs.google.com/presentation/d/1bmL6rqPrNFWL-cw936RD6eQ8AvoLNyhJDqbl7uZS_JE/edit?usp=sharing)
+
 This application to allow users to make their own card database and construct decks from it.
 The project make use of various technological tools such as Github, Jenkins, Google Cloud Platform (GCP), MySQL database/ h2 database, SonarQube, Nexus, Java, Spring, Javascript, CSS, HTML, JUnit, and Mockito.
 
