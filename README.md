@@ -18,3 +18,4 @@ The following instructions will be allow to use the application.
 tests are done using Junit, Mockito, Selenium and TestNG. to run these tests simply right click the com.qa folder within the test folder and click run tests in com.qa with coverage.
 
 # Using the app
+https://gyazo.com/e265277827b16211607f0bed24b46168
